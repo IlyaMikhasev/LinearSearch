@@ -1,6 +1,6 @@
-// Персональный шаблон
+// РџРµСЂСЃРѕРЅР°Р»СЊРЅС‹Р№ С€Р°Р±Р»РѕРЅ
 #include <iostream>
-// Линейный поиск первого вхождения элемента Value  в массив arr , поиск начинается с позиции begin(по уцмолчанию 0)
+// Р›РёРЅРµР№РЅС‹Р№ РїРѕРёСЃРє РїРµСЂРІРѕРіРѕ РІС…РѕР¶РґРµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° Value  РІ РјР°СЃСЃРёРІ arr , РїРѕРёСЃРє РЅР°С‡РёРЅР°РµС‚СЃСЏ СЃ РїРѕР·РёС†РёРё begin(РїРѕ СѓС†РјРѕР»С‡Р°РЅРёСЋ 0)
 template <typename T>
 int search_index(T arr[], const int lenght, T value, int begin=0) {
 	for (int i = begin; i < lenght; i++)
@@ -8,7 +8,7 @@ int search_index(T arr[], const int lenght, T value, int begin=0) {
 			return i;
 	return -1; 
 }
-// линейный поиск последнего числа Value в массив arr
+// Р»РёРЅРµР№РЅС‹Р№ РїРѕРёСЃРє РїРѕСЃР»РµРґРЅРµРіРѕ С‡РёСЃР»Р° Value РІ РјР°СЃСЃРёРІ arr
 template <typename T>
 int search_Last_index(T arr[], const int length, T value) {
 	for (int i = length - 1; i >= 0; i--)
@@ -16,7 +16,7 @@ int search_Last_index(T arr[], const int length, T value) {
 			return i;
 	return -1;
 }
-// линейный поиск последнего числа Value в массив arr поиск начинается с позиции begin
+// Р»РёРЅРµР№РЅС‹Р№ РїРѕРёСЃРє РїРѕСЃР»РµРґРЅРµРіРѕ С‡РёСЃР»Р° Value РІ РјР°СЃСЃРёРІ arr РїРѕРёСЃРє РЅР°С‡РёРЅР°РµС‚СЃСЏ СЃ РїРѕР·РёС†РёРё begin
 template <typename T>
 int search_Last_index(T arr[], const int length, T value,int begin) {
 	for (int i = begin; i >= 0; i--)
@@ -24,7 +24,7 @@ int search_Last_index(T arr[], const int length, T value,int begin) {
 			return i;
 	return -1;
 }
-//Вывод под слова с позиции символа sym
+//Р’С‹РІРѕРґ РїРѕРґ СЃР»РѕРІР° СЃ РїРѕР·РёС†РёРё СЃРёРјРІРѕР»Р° sym
 void subword(char arr[], const int length, char sym) {
 	int index = search_index(arr, length, sym);
 	if (index == -1)
@@ -40,27 +40,27 @@ int main() {
 	int n;
 	const int size = 10;
 	int arr[]{ 6,4,1,7,-6,100,0,1,11,9 };
-	//функция search_index
-	std::cout << "Позиция числа 7 в массиве = " << search_index(arr, size, 7) << '\n';
-	std::cout << "Первая позиция числа 1 в массиве = " << search_index(arr, size, 1) << '\n';
+	//С„СѓРЅРєС†РёСЏ search_index
+	std::cout << "РџРѕР·РёС†РёСЏ С‡РёСЃР»Р° 7 РІ РјР°СЃСЃРёРІРµ = " << search_index(arr, size, 7) << '\n';
+	std::cout << "РџРµСЂРІР°СЏ РїРѕР·РёС†РёСЏ С‡РёСЃР»Р° 1 РІ РјР°СЃСЃРёРІРµ = " << search_index(arr, size, 1) << '\n';
 	if(search_index(arr, size, 100)==-1)
-		std::cout << "Числа 100 нет в массиве " << '\n';
+		std::cout << "Р§РёСЃР»Р° 100 РЅРµС‚ РІ РјР°СЃСЃРёРІРµ " << '\n';
 	else
-		std::cout<<"Позиция числа 100 в массиве = " << search_index(arr, size, 100) << '\n';
-	std::cout << "Первая позиция числа 1, начиная с позиции 4, в массиве = " << search_index(arr, size, 1, 4) << '\n';
+		std::cout<<"РџРѕР·РёС†РёСЏ С‡РёСЃР»Р° 100 РІ РјР°СЃСЃРёРІРµ = " << search_index(arr, size, 100) << '\n';
+	std::cout << "РџРµСЂРІР°СЏ РїРѕР·РёС†РёСЏ С‡РёСЃР»Р° 1, РЅР°С‡РёРЅР°СЏ СЃ РїРѕР·РёС†РёРё 4, РІ РјР°СЃСЃРёРІРµ = " << search_index(arr, size, 1, 4) << '\n';
 	
-	//функция search_last_index
-	std::cout << "позиция числа 7 в массиве = "<<search_Last_index(arr,size,7) << '\n';
-	std::cout << "Последняя позиция числа 7 в массиве = " << search_Last_index(arr, size, 1) << '\n';
-	std::cout << "Первая позиция числа 1, начиная с числа 4, в массиве = " << search_Last_index(arr, size, 1, 4) << '\n';
+	//С„СѓРЅРєС†РёСЏ search_last_index
+	std::cout << "РїРѕР·РёС†РёСЏ С‡РёСЃР»Р° 7 РІ РјР°СЃСЃРёРІРµ = "<<search_Last_index(arr,size,7) << '\n';
+	std::cout << "РџРѕСЃР»РµРґРЅСЏСЏ РїРѕР·РёС†РёСЏ С‡РёСЃР»Р° 7 РІ РјР°СЃСЃРёРІРµ = " << search_Last_index(arr, size, 1) << '\n';
+	std::cout << "РџРµСЂРІР°СЏ РїРѕР·РёС†РёСЏ С‡РёСЃР»Р° 1, РЅР°С‡РёРЅР°СЏ СЃ С‡РёСЃР»Р° 4, РІ РјР°СЃСЃРёРІРµ = " << search_Last_index(arr, size, 1, 4) << '\n';
 	
-	//подслово
-	std::cout << "Начальное слово:\n";
+	//РїРѕРґСЃР»РѕРІРѕ
+	std::cout << "РќР°С‡Р°Р»СЊРЅРѕРµ СЃР»РѕРІРѕ:\n";
 	const int letters = 8;
 	char word[letters]{ 'f','u','n','c','t','i','o','n' };
 	for (int i = 0; i < letters; i++)
 		std::cout << word[i];
-	std::cout << "\nПодслово\n";
+	std::cout << "\nРџРѕРґСЃР»РѕРІРѕ\n";
 	subword(word, letters, 'a');
 
 	return 0;
